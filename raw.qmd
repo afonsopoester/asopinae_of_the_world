@@ -1,0 +1,132 @@
+---
+title: "Raw Data"
+format: html
+editor: visual
+---
+
+
+```{r load data, message = FALSE, warning = FALSE, include = FALSE}
+library(tidyverse)
+library(leaflet)
+library(htmlwidgets)
+library(htmltools)
+library(crosstalk)
+library(bslib)
+library(bsicons)
+library(summarywidget)
+library(reactable)
+```
+
+```{r}
+#| echo: false
+#| output: false
+
+#READ DISTRBUTION DATA
+asop <- read.csv("Asopinae_Analises_R_Preparado.csv", sep = ",")
+asop <- asop %>%
+  na.omit(asop) 
+colnames(asop) <- c("Genus", "Species","Local_Label", "X_Longitude", "Y_Latitude", "Refs", "Country", "Continent", "Ecoregion", "Realm")
+
+asop$X_Longitude <- as.numeric(asop$X_Longitude) 
+asop$Y_Latitude <- as.numeric(asop$Y_Latitude)
+
+row.names(asop) <- NULL
+
+
+shared_asop <- SharedData$new(asop, group = "Asop")
+
+share_species <- asop %>%
+  select(Species) %>%
+  unique() %>%
+  SharedData$new(group = "Asop")
+```
+
+This is the current database of "Asopinae of the World". Here, you can look at the table data. It is the same table data available alongside the Distribution Map. 
+
+```{r}
+#| echo: false
+
+bscols(
+  value_box(
+    title = "Records",
+    value = summarywidget(shared_asop),
+    showcase = bsicons::bs_icon("search"),
+    theme = value_box_theme(bg = "#2f4538", fg = "#F3EEEA"),
+    width = 0.1
+  ),
+  
+    value_box(
+    title = "Species",
+    value = summarywidget(share_species),
+    showcase = bsicons::bs_icon("search"),
+    theme = value_box_theme(bg = "#2f4538", fg = "#F3EEEA"),
+    width = 0.1
+  )
+  
+)
+```
+
+
+```{r}
+#| echo: false
+
+
+bscols(
+  filter_select("Genus", "Genus", shared_asop, ~Genus),
+  filter_select("Species", "Species", shared_asop, ~Species)
+) 
+  
+bscols(  
+  filter_select("Continent", "Continent", shared_asop, ~Continent),
+  filter_select("Country", "Country", shared_asop, ~Country))
+  
+bscols(  
+  filter_select("Ecoregion", "Ecoregion", shared_asop, ~Ecoregion),
+  filter_select("Realm", "Biogeographical Realm", shared_asop, ~Realm)
+)
+```
+
+
+```{r}
+#| echo: false
+
+
+library(fontawesome)
+
+htmltools::browsable(
+    tagList(
+      tags$button(
+        tagList(fontawesome::fa("download"), "Download as CSV"),
+        onclick = "Reactable.downloadDataCSV('asop_table','Asopinae_Analises_R_Preparado.csv')"
+      ),
+    reactable(shared_asop,
+              defaultColDef = colDef(
+                  align = "left",
+                  headerStyle = list(background = "#f7f7f8", fontSize = "11px"),  
+                  style = list(fontSize = "11px") 
+                ),
+              columns = list(
+            Genus = colDef(width = 50),
+            Species = colDef(width = 80),
+            Local_Label = colDef(width = 100),
+            X_Longitude = colDef(width = 60),
+            Y_Latitude = colDef(width = 60),
+            Refs = colDef(width = 80),
+            Country = colDef(width = 80),
+            Continent = colDef(width = 80),
+            Ecoregion = colDef(width = 100),
+            Realm = colDef(width = 100)
+          ),
+              elementId = 'asop_table',
+              highlight = TRUE,
+              pagination = FALSE,
+              height = 1000,
+              width = "100%",
+              style = list(fontSize = "10px"))
+  )
+)
+  
+
+```
+
+
