@@ -3,14 +3,14 @@ project:
 
 
 title: "Asopinae of the World"
-index: "main.html"
+
 
 website:
   navbar:
     pinned: true
     background: info
     right:
-      - href: index.qmd
+      - href: main.qmd
         text: Home
       - href: distr_data.qmd
         text: Distribution map
