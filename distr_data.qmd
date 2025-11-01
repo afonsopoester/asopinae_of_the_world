@@ -1,0 +1,186 @@
+---
+title: "Distribution map"
+format: html
+---
+
+```{r}
+#| echo: false
+#| output: false
+#| warning: false
+
+
+library(tidyverse)
+library(leaflet)
+library(htmlwidgets)
+library(htmltools)
+library(crosstalk)
+library(bslib)
+library(bsicons)
+library(summarywidget)
+library(reactable)
+```
+
+``` {r}
+#| echo: false
+#| output: false
+
+#READ DISTRBUTION DATA
+asop <- read.csv("Asopinae_Analises_R_Preparado.csv", sep = ",")
+asop <- asop %>%
+  na.omit(asop)
+
+
+colnames(asop) <- c("Genus", "Species","Local_Label", "X_Longitude", "Y_Latitude", "Refs", "Country", "Continent", "Realm")
+
+asop$X_Longitude <- as.numeric(asop$X_Longitude) 
+asop$Y_Latitude <- as.numeric(asop$Y_Latitude)
+
+row.names(asop) <- NULL
+
+shared_asop <- SharedData$new(asop, group = "Asop")
+
+share_species <- asop %>%
+  select(Species) %>%
+  unique() %>%
+  SharedData$new(group = "Asop")
+```
+
+This is the current database of "Asopinae of the World" accessible through an interactive map!
+
+Right below it, you can find a table with the selected records and a download button. 
+
+It will only download the records which are selected, so if you want to download the whole database, do not aplly any filters. 
+
+If hold "ctrl" you can select more than one item in the filters.
+
+``` {r}
+#| echo: false
+bscols(
+  value_box(
+    title = "Records",
+    value = summarywidget(shared_asop),
+    showcase = bsicons::bs_icon("search"),
+    theme = value_box_theme(bg = "#2f4538", fg = "#F3EEEA"),
+    width = 0.1
+  ),
+  
+    value_box(
+    title = "Species",
+    value = summarywidget(share_species),
+    showcase = bsicons::bs_icon("search"),
+    theme = value_box_theme(bg = "#2f4538", fg = "#F3EEEA"),
+    width = 0.1
+  )
+  
+)
+```
+
+
+```{r}
+#| echo: false
+
+bscols(
+  filter_select("Genus", "Genus", shared_asop, ~Genus),
+  filter_select("Species", "Species", shared_asop, ~Species)
+) 
+  
+bscols(  
+  filter_select("Continent", "Continent", shared_asop, ~Continent),
+  filter_select("Country", "Country", shared_asop, ~Country))
+  
+bscols(  
+  filter_select("Realm", "Biogeographical Realm", shared_asop, ~Realm)
+)
+
+```
+
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+```{r}
+#| echo: false
+#| warning: false
+
+pal <- colorFactor("Spectral", domain = unique(asop$Species))
+
+leaflet(data = shared_asop) %>%
+  addProviderTiles("Esri.WorldImagery", group = "Aerial") %>%
+  addProviderTiles(providers$CartoDB.Voyager, group = "Default") %>%
+  addLayersControl(
+    baseGroups = c("Default", "Aerial"),
+    options = layersControlOptions(collapsed = T)
+    ) %>%
+  addCircleMarkers(radius = 2,
+                   lng = ~ X_Longitude,
+                   lat = ~ Y_Latitude,
+                    popup = ~paste0(
+                      "<b>Genus:</b> ", htmltools::htmlEscape(Genus), "<br>",
+                      "<b>Species:</b> ", htmltools::htmlEscape(Species), "<br>",
+                      "<b>Local Label:</b> ", htmltools::htmlEscape(Local_Label), "<br>",
+                      "<b>Longitude:</b> ", htmltools::htmlEscape(X_Longitude), "<br>",
+                      "<b>Latitude:</b> ", htmltools::htmlEscape(Y_Latitude), "<br>",
+                      "<b>Refs:</b> ", htmltools::htmlEscape(Refs), "<br>",
+                      "<b>Country:</b> ", htmltools::htmlEscape(Country), "<br>",
+                      "<b>Continent:</b> ", htmltools::htmlEscape(Continent), "<br>",
+                      "<b>Realm:</b> ", htmltools::htmlEscape(Realm)
+                    ),
+                   color = ~pal(Species))
+```
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+```{r}
+#| echo: false
+
+
+library(fontawesome)
+
+htmltools::browsable(
+    tagList(
+      tags$button(
+        tagList(fontawesome::fa("download"), "Download as CSV"),
+        onclick = "Reactable.downloadDataCSV('asop_table','Asopinae_Analises_R_Preparado.csv')"
+      ),
+    reactable(shared_asop,
+              defaultColDef = colDef(
+                  align = "left",
+                  headerStyle = list(background = "#f7f7f8", fontSize = "11px"),  
+                  style = list(fontSize = "11px") 
+                ),
+              columns = list(
+            Genus = colDef(width = 50),
+            Species = colDef(width = 80),
+            Local_Label = colDef(width = 100),
+            X_Longitude = colDef(width = 60),
+            Y_Latitude = colDef(width = 60),
+            Refs = colDef(width = 80),
+            Country = colDef(width = 80),
+            Continent = colDef(width = 80),
+            Realm = colDef(width = 100)
+          ),
+              elementId = 'asop_table',
+              highlight = TRUE,
+              pagination = FALSE,
+              height = 1000,
+              width = "100%",
+              style = list(fontSize = "10px"))
+  )
+)
+  
+
+```

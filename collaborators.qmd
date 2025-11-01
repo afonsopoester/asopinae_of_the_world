@@ -1,0 +1,12 @@
+---
+title: "Authors"
+editor: visual
+---
+
+-   Talita Roell [{{< iconify simple-icons researchgate >}}](https://www.researchgate.net/profile/Talita-Roell) [{{< iconify academicons google-scholar-square >}}](https://scholar.google.com/citations?user=S1viui0AAAAJ&hl=pt-BR&oi=ao)
+
+-   Luiz Alexandre Campos [{{< iconify simple-icons researchgate >}}](https://researchgate.net/profile/Luiz-Campos-4) [{{< iconify academicons google-scholar-square >}}](https://scholar.google.com/citations?user=LccvYcUAAAAJ&hl=pt-BR&oi=ao)
+
+-   Augusto Ferrari [{{< iconify simple-icons researchgate >}}](https://www.researchgate.net/profile/Augusto-Ferrari-2) [{{< iconify academicons google-scholar-square >}}](https://scholar.google.com/citations?user=tZZvu-IAAAAJ&hl=pt-BR&oi=ao)
+
+-   João Afonso Poester-Carvalho [{{< iconify simple-icons researchgate >}}](https://www.researchgate.net/profile/Joao-Afonso-Poester-Carvalho-2) [{{< iconify academicons google-scholar-square title = "aaaa">}}](https://scholar.google.com.br/citations?user=O8awK9kAAAAJ&hl=pt-BR)

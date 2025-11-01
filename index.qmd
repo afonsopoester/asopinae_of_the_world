@@ -1,0 +1,202 @@
+---
+title: "Asopinae of the World"
+format: html
+---
+
+## Introduction
+
+**Asopinae of the World ver. 1.0** is the result of an effort to gather distribution data of Asopinae species around the World. These data are freely available for download. 
+
+Using data from the literature and museum specimens, we recorded 5030 records for 299 species of Asopinae and made them available in Roell et al 2025. We hope to further expand the database, as more species and records are described .
+
+Here, you can check the species we compiled, and the number of records for each one.
+There is also a plot showing how many species we compiled for each adminstrative regions (GADM, 2024, see Roell et al 2025). 
+
+Across the website, you can also visualize a map with all records, check the raw data and download it, find the bibliography used to compile the data, and find the contacts of the collaborators. 
+
+If you wish to cite the dataset available here or the website itself, please use the following citation: 
+
+>  Poester-Carvalho, J. A.; Ferrari, A.; Roell, T.; Campos, L. A. (2024) Asopinae of the World Ver 1.0, available at: https://afonsopoester.github.io/asopinae_of_the_world/main.html. accessed on:
+
+
+
+``` {r}
+#| echo: false
+#| output: false
+ 
+library(tidyverse)
+library(reactable)
+library(leaflet)
+library(htmlwidgets)
+library(crosstalk)
+library(bslib)
+library(bsicons)
+library(summarywidget)
+
+```
+
+
+
+``` {r}
+#| echo: false
+#| output: false
+#| include: false
+
+#READ DISTRBUTION DATA
+asop <- read.csv("Asopinae_Analises_R_Preparado.csv", sep = ",")
+asop <- asop %>%
+  na.omit(asop) 
+colnames(asop) <- c("Genus", "Species","Local_Label", "X_Longitude", "Y_Latitude", "Refs", "Country", "Continent", "Realm")
+
+asop$X_Longitude <- as.numeric(asop$X_Longitude) 
+asop$Y_Latitude <- as.numeric(asop$Y_Latitude)
+
+row.names(asop) <- NULL
+
+shared_asop <- SharedData$new(asop, group = "Asop")
+
+
+
+
+
+share_species <- asop %>%
+  select(Species) %>%
+  unique() %>%
+  SharedData$new(group = "Asop")
+
+
+
+
+```
+
+
+
+
+``` {r valueboxes}
+#| echo: false
+bscols(
+  value_box(
+    title = "Records",
+    value = summarywidget(shared_asop),
+    showcase = bsicons::bs_icon("search"),
+    theme = value_box_theme(bg = "#2f4538", fg = "#F3EEEA"),
+    width = 0.1
+  ),
+  
+    value_box(
+    title = "Species",
+    value = summarywidget(share_species),
+    showcase = bsicons::bs_icon("search"),
+    theme = value_box_theme(bg = "#2f4538", fg = "#F3EEEA"),
+    width = 0.1
+  )
+  
+)
+
+```
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+
+## Records per species
+
+
+``` {r}
+#| echo: false
+#| warning: false
+
+share_species_plot <- asop %>%
+  group_by(Genus, Species) %>%
+  summarise(Records = length(Species)) %>%
+  data.table::as.data.table() %>%
+  data.table::setkey(Species) %>%
+  as.data.frame() %>%
+  SharedData$new()
+
+
+bscols(
+  filter_select("Genus", "Genus", share_species_plot, ~Genus),
+  filter_select("Species", "Species", share_species_plot, ~Species))
+
+library(plotly)
+
+fig <- plot_ly(
+    share_species_plot,
+    x = ~Species, 
+    y = ~Records,
+    type = "bar"
+) %>%
+  layout(yaxis = list(title = 'Records'))
+fig
+
+
+
+
+```
+
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+## GADM Adminstrative Regions in the database
+
+``` {r grafico paises}
+#| echo: false
+#| warning: false
+
+share_countries <- asop %>%
+  group_by(Country) %>%
+  summarise(richness = length(unique(Species))) %>%
+  data.table::as.data.table() %>%
+  data.table::setkey(richness) %>%
+  as.data.frame() %>%
+  SharedData$new()
+
+
+filter_select("Country", "Adminstrative region", share_countries, ~Country)
+
+library(plotly)
+
+fig <- plot_ly(
+    share_countries,
+    x = ~Country, 
+    y = ~richness,
+    type = "bar"
+) %>%
+  layout(yaxis = list(title = 'Richness'),
+         xaxis = list(title = 'Adminstrative region'))
+fig
+```
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+
