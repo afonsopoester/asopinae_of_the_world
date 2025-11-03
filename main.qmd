@@ -43,7 +43,7 @@ library(summarywidget)
 asop <- read.csv("Asopinae_Analises_R_Preparado.csv", sep = ",")
 asop <- asop %>%
   na.omit(asop) 
-colnames(asop) <- c("Genus", "Species","Local_Label", "X_Longitude", "Y_Latitude", "Refs", "Country", "Continent", "Realm")
+colnames(asop) <- c("Genus", "Species","Local_Label", "X_Longitude", "Y_Latitude", "Refs", "Country", "Continent", "Realm", "Country_Level_Record")
 
 asop$X_Longitude <- as.numeric(asop$X_Longitude) 
 asop$Y_Latitude <- as.numeric(asop$Y_Latitude)
