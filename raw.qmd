@@ -24,7 +24,7 @@ library(reactable)
 asop <- read.csv("Asopinae_Analises_R_Preparado.csv", sep = ",")
 asop <- asop %>%
   na.omit(asop) 
-colnames(asop) <- c("Genus", "Species","Local_Label", "X_Longitude", "Y_Latitude", "Refs", "Country", "Continent", "Realm")
+colnames(asop) <- c("Genus", "Species","Local_Label", "X_Longitude", "Y_Latitude", "Refs", "Country", "Continent", "Realm", "Country_Level_Record")
 
 asop$X_Longitude <- as.numeric(asop$X_Longitude) 
 asop$Y_Latitude <- as.numeric(asop$Y_Latitude)
@@ -42,7 +42,7 @@ share_species <- asop %>%
 
 This is the current database of "Asopinae of the World". Here, you can look at the table data. It is the same table data available alongside the Distribution Map. Bellow it, you can also look at all the species in the database.
 
-We emphasize that ***some records are georeferenced only according to the country reported for the species***, as well as records that are the only ones known for a given species in a country.  
+We emphasize that ***some records are georeferenced only according to the country reported for the species***, as well as records that are the only ones known for a given species in a country.
 
 ```{r}
 #| echo: false
@@ -94,7 +94,8 @@ htmltools::browsable(
             Refs = colDef(width = 80),
             Country = colDef(width = 80),
             Continent = colDef(width = 80),
-            Realm = colDef(width = 100)
+            Realm = colDef(width = 100),
+            Country_Level_Record = colDef(width = 150)
           ),
               elementId = 'asop_table',
               highlight = TRUE,

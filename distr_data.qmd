@@ -30,7 +30,7 @@ asop <- asop %>%
   na.omit(asop)
 
 
-colnames(asop) <- c("Genus", "Species","Local_Label", "X_Longitude", "Y_Latitude", "Refs", "Country", "Continent", "Realm")
+colnames(asop) <- c("Genus", "Species","Local_Label", "X_Longitude", "Y_Latitude", "Refs", "Country", "Continent", "Realm", "Country_Level_Record")
 
 asop$X_Longitude <- as.numeric(asop$X_Longitude) 
 asop$Y_Latitude <- as.numeric(asop$Y_Latitude)
@@ -128,7 +128,8 @@ leaflet(data = shared_asop) %>%
                       "<b>Refs:</b> ", htmltools::htmlEscape(Refs), "<br>",
                       "<b>Country:</b> ", htmltools::htmlEscape(Country), "<br>",
                       "<b>Continent:</b> ", htmltools::htmlEscape(Continent), "<br>",
-                      "<b>Realm:</b> ", htmltools::htmlEscape(Realm)
+                      "<b>Realm:</b> ", htmltools::htmlEscape(Realm),"<br>",
+                      "<b>Country Level Record:</b> ", htmltools::htmlEscape(Country_Level_Record)
                     ),
                    color = ~pal(Species))
 ```
@@ -168,7 +169,8 @@ htmltools::browsable(
             Refs = colDef(width = 80),
             Country = colDef(width = 80),
             Continent = colDef(width = 80),
-            Realm = colDef(width = 100)
+            Realm = colDef(width = 100),
+            Country_Level_Record = colDef(width = 150)
           ),
               elementId = 'asop_table',
               highlight = TRUE,
