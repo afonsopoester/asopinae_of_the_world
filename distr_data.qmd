@@ -45,13 +45,9 @@ share_species <- asop %>%
   SharedData$new(group = "Asop")
 ```
 
-This is the current database of "Asopinae of the World" accessible through an interactive map!
+This is the current database of "Asopinae of the World" accessible through an interactive map! Right below it, you can find a table with the selected records and a download button. It will only download the records which are selected, so if you want to download the whole database, do not aplly any filters. If hold "ctrl" you can select more than one item in the filters.
 
-Right below it, you can find a table with the selected records and a download button. 
-
-It will only download the records which are selected, so if you want to download the whole database, do not aplly any filters. 
-
-If hold "ctrl" you can select more than one item in the filters.
+We emphasize that some records are georeferenced only according to the country reported for the species, as well as records that are the only ones known for a given species in a country, and therefore do not represent actual collection sites.
 
 ``` {r}
 #| echo: false

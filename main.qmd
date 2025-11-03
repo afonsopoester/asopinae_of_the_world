@@ -7,12 +7,9 @@ format: html
 
 **Asopinae of the World ver. 1.0** is the result of an effort to gather distribution data of Asopinae species around the World. These data are freely available for download. 
 
-Using data from the literature and museum specimens, we recorded 5030 records for 299 species of Asopinae and made them available in Roell et al 2025. We hope to further expand the database, as more species and records are described .
+Using data from the literature and museum specimens, we recorded 5030 records for 299 species of Asopinae and made them available in Roell et al 2025. We hope to further expand the database, as more species and records are described. Here, you can check the species we compiled, and the number of records for each one. There is also a plot showing how many species we compiled for each adminstrative regions (GADM, 2024, see Roell et al 2025). Across the website, you can also visualize a map with all records, check the raw data and download it, find the bibliography used to compile the data, and find the contacts of the collaborators. 
 
-Here, you can check the species we compiled, and the number of records for each one.
-There is also a plot showing how many species we compiled for each adminstrative regions (GADM, 2024, see Roell et al 2025). 
-
-Across the website, you can also visualize a map with all records, check the raw data and download it, find the bibliography used to compile the data, and find the contacts of the collaborators. 
+We emphasize that some records are georeferenced only according to the country reported for the species, as well as records that are the only ones known for a given species in a country, and therefore do not represent actual collection sites.
 
 If you wish to cite the dataset available here or the website itself, please use the following citation: 
 
