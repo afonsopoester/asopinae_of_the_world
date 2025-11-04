@@ -25,7 +25,7 @@ library(reactable)
 #| output: false
 
 #READ DISTRBUTION DATA
-asop <- read.csv("Asopinae_Analises_R_Preparado.csv", sep = ",")
+asop <- read.csv("asopinae_v_1_0.csv", sep = ",")
 asop <- asop %>%
   na.omit(asop)
 
@@ -152,7 +152,7 @@ htmltools::browsable(
     tagList(
       tags$button(
         tagList(fontawesome::fa("download"), "Download as CSV"),
-        onclick = "Reactable.downloadDataCSV('asop_table','Asopinae_Analises_R_Preparado.csv')"
+        onclick = "Reactable.downloadDataCSV('asop_table','asopinae_v_1_0.csv')"
       ),
     reactable(shared_asop,
               defaultColDef = colDef(

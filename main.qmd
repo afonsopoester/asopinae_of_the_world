@@ -40,7 +40,7 @@ library(summarywidget)
 #| include: false
 
 #READ DISTRBUTION DATA
-asop <- read.csv("Asopinae_Analises_R_Preparado.csv", sep = ",")
+asop <- read.csv("asopinae_v_1_0.csv", sep = ",")
 asop <- asop %>%
   na.omit(asop) 
 colnames(asop) <- c("Genus", "Species","Local_Label", "X_Longitude", "Y_Latitude", "Refs", "Country", "Continent", "Realm", "Country_Level_Record")

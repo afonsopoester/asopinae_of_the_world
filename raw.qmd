@@ -21,7 +21,7 @@ library(reactable)
 #| output: false
 
 #READ DISTRBUTION DATA
-asop <- read.csv("Asopinae_Analises_R_Preparado.csv", sep = ",")
+asop <- read.csv("asopinae_v_1_0.csv", sep = ",")
 asop <- asop %>%
   na.omit(asop) 
 colnames(asop) <- c("Genus", "Species","Local_Label", "X_Longitude", "Y_Latitude", "Refs", "Country", "Continent", "Realm", "Country_Level_Record")
@@ -77,7 +77,7 @@ htmltools::browsable(
     tagList(
       tags$button(
         tagList(fontawesome::fa("download"), "Download as CSV"),
-        onclick = "Reactable.downloadDataCSV('asop_table','Asopinae_Analises_R_Preparado.csv')"
+        onclick = "Reactable.downloadDataCSV('asop_table','asopinae_v_1_0.csv')"
       ),
     reactable(shared_asop,
               defaultColDef = colDef(
@@ -115,7 +115,7 @@ htmltools::browsable(
 #| echo: false
 #| warning: false
 
-regs <- read.csv("continents_countries.csv") %>%
+regs <- read.csv("Stats/continents_countries.csv") %>%
   select(Species, Count, Conts, Number_Cont, Cntrs, Number_Cntr)
 
 shared_plot <- SharedData$new(regs)

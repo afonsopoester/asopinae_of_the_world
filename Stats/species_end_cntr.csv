@@ -1,0 +1,300 @@
+"","Species","is_endemic","n"
+"1","Afrius flavirostrum","Not Endemic",18
+"2","Afrius kolleri","Not Endemic",13
+"3","Afrius purpureus","Not Endemic",101
+"4","Alcaeorrhynchus grandis","Not Endemic",104
+"5","Alcaeorrhynchus phymatophorus","Not Endemic",5
+"6","Amyotea erythromela","Endemic",3
+"7","Amyotea frontalis","Endemic",2
+"8","Amyotea glaucolimbata","Endemic",1
+"9","Amyotea hamata","Not Endemic",9
+"10","Amyotea lata","Endemic",4
+"11","Amyotea malabarica","Not Endemic",43
+"12","Amyotea micans","Endemic",1
+"13","Amyotea reciproca","Not Endemic",3
+"14","Anasida funebris","Endemic",1
+"15","Anasida orientalis","Endemic",3
+"16","Anasida schoutedeni","Endemic",1
+"17","Anasida tenebrio","Not Endemic",9
+"18","Andrallus spinidens","Not Endemic",75
+"19","Apateticus lineolatus","Not Endemic",83
+"20","Apateticus marginiventris","Not Endemic",14
+"21","Apoecilus bracteatus","Not Endemic",231
+"22","Apoecilus cynicus","Not Endemic",192
+"23","Apoecilus invarius","Endemic",2
+"24","Arma custos","Not Endemic",78
+"25","Arma ferruginea","Endemic",5
+"26","Arma insperata","Endemic",3
+"27","Arma koreana","Not Endemic",7
+"28","Arma maculata","Endemic",2
+"29","Arma tubercula","Endemic",3
+"30","Arma velata","Endemic",1
+"31","Australojalla versicolor","Endemic",1
+"32","Blachia ducalis","Not Endemic",5
+"33","Brontocoris nigrolimbatus","Not Endemic",2
+"34","Brontocoris tabidus","Not Endemic",34
+"35","Bulbostethus chrysopterus","Not Endemic",5
+"36","Bulbostethus transversalis","Endemic",3
+"37","Canthecona discolor","Not Endemic",12
+"38","Cantheconesia cyanacantha","Not Endemic",4
+"39","Cantheconidea humeralis","Not Endemic",12
+"40","Cantheconidea javana","Not Endemic",15
+"41","Cantheconidea mitis","Not Endemic",3
+"42","Cazira bergrothi","Endemic",1
+"43","Cazira breddini","Not Endemic",6
+"44","Cazira chiroptera","Not Endemic",4
+"45","Cazira concinna","Endemic",2
+"46","Cazira emeia","Endemic",4
+"47","Cazira flava","Endemic",2
+"48","Cazira frivaldskyi","Not Endemic",10
+"49","Cazira fruhstorferi","Endemic",1
+"50","Cazira horvathi","Not Endemic",3
+"51","Cazira inerma","Endemic",6
+"52","Cazira insignis","Not Endemic",2
+"53","Cazira internexa","Endemic",1
+"54","Cazira kirkaldyi","Endemic",1
+"55","Cazira membrania","Endemic",4
+"56","Cazira montandoni","Not Endemic",2
+"57","Cazira reuteri","Endemic",1
+"58","Cazira schwarzi","Endemic",1
+"59","Cazira sichuana","Endemic",1
+"60","Cazira similis","Not Endemic",2
+"61","Cazira thibetensis","Endemic",2
+"62","Cazira ulcerata","Not Endemic",7
+"63","Cazira vegeta","Not Endemic",5
+"64","Cazira verrucosa","Not Endemic",27
+"65","Cazira yunnanica","Endemic",1
+"66","Cecyrina flata","Endemic",1
+"67","Cecyrina platyrhinoides","Not Endemic",16
+"68","Cecyrina rubra","Endemic",1
+"69","Cermatulus nasalis","Endemic",24
+"70","Cermatulus turbotti","Endemic",1
+"71","Colpothyreus flavolineatus","Endemic",1
+"72","Comperocoris roehneri","Endemic",7
+"73","Conquistator mucronatus","Endemic",1
+"74","Coryzorhaphis carneolus","Not Endemic",12
+"75","Coryzorhaphis cruciata","Not Endemic",19
+"76","Coryzorhaphis dollingi","Endemic",1
+"77","Coryzorhaphis egeri","Not Endemic",3
+"78","Coryzorhaphis leucocephala","Endemic",10
+"79","Coryzorhaphis superba","Endemic",1
+"80","Damarius splendidulus","Not Endemic",14
+"81","Dinorhynchus dybowskyi","Not Endemic",10
+"82","Dinorhynchus opulentus","Endemic",2
+"83","Discocera cayennensis","Not Endemic",9
+"84","Discocera coccinea","Not Endemic",24
+"85","Dorycoris pavoninus","Not Endemic",40
+"86","Ealda minax","Endemic",1
+"87","Eocanthecona acuta ","Endemic",2
+"88","Eocanthecona binotata","Not Endemic",3
+"89","Eocanthecona concinna","Not Endemic",15
+"90","Eocanthecona eburnea","Endemic",1
+"91","Eocanthecona formosa","Endemic",1
+"92","Eocanthecona furcellata","Not Endemic",62
+"93","Eocanthecona glaugeri","Endemic",1
+"94","Eocanthecona insularis","Endemic",1
+"95","Eocanthecona japonicola","Not Endemic",3
+"96","Eocanthecona kyushuensis","Endemic",1
+"97","Eocanthecona latipes","Endemic",4
+"98","Eocanthecona neotibialis","Endemic",1
+"99","Eocanthecona ornatula","Endemic",2
+"100","Eocanthecona parva","Not Endemic",13
+"101","Eocanthecona populusi","Endemic",1
+"102","Eocanthecona robusta","Not Endemic",5
+"103","Eocanthecona rufescens","Endemic",2
+"104","Eocanthecona shikokuensis","Endemic",1
+"105","Eocanthecona thomsoni","Endemic",8
+"106","Eocanthecona tibialis","Not Endemic",4
+"107","Eocanthecona variabilis","Endemic",2
+"108","Eocanthecona vollenhoveni","Endemic",1
+"109","Euthyrhynchus floridanus","Not Endemic",76
+"110","Friarius alluaudi","Endemic",5
+"111","Glypsus abdominalis","Endemic",3
+"112","Glypsus bouvieri","Not Endemic",15
+"113","Glypsus carinulatus","Endemic",1
+"114","Glypsus conspicuus","Not Endemic",19
+"115","Glypsus erubescens","Not Endemic",6
+"116","Glypsus fuscispinus","Not Endemic",2
+"117","Glypsus kuhlgatzi","Not Endemic",16
+"118","Glypsus nigripes","Endemic",1
+"119","Glypsus sparsus","Endemic",1
+"120","Glypsus truculentus","Endemic",5
+"121","Glypsus vigil","Endemic",1
+"122","Hemallia signitenens","Not Endemic",2
+"123","Heteroscelis bimaculata","Not Endemic",8
+"124","Heteroscelis lepida","Not Endemic",17
+"125","Heteroscelis robustus","Not Endemic",8
+"126","Heteroscelis servillii","Not Endemic",37
+"127","Heteroscelis vandembergi","Endemic",2
+"128","Hoploxys coeruleus","Not Endemic",13
+"129","Jalla dumosa","Not Endemic",38
+"130","Jalla subcalcarata","Endemic",7
+"131","Jalla subdilatata","Endemic",1
+"132","Jalloides opulentus","Endemic",1
+"133","Jalloides rubricosus","Endemic",1
+"134","Leptolobus eburneatus","Not Endemic",6
+"135","Leptolobus insignis","Endemic",1
+"136","Leptolobus karschi","Endemic",1
+"137","Leptolobus martnini","Not Endemic",2
+"138","Leptolobus murrayi","Not Endemic",4
+"139","Leptolobus zanzibaricus","Endemic",1
+"140","Macrorhaphis acuta","Not Endemic",25
+"141","Macrorhaphis dallasi","Endemic",6
+"142","Macrorhaphis leprosa","Endemic",4
+"143","Macrorhaphis wollastoni ","Endemic",1
+"144","Marmessulus brasilianus","Not Endemic",3
+"145","Marmessulus nigricornis","Not Endemic",7
+"146","Martinina inexpectata","Endemic",3
+"147","Martinina prima","Endemic",1
+"148","Mecosoma coquerelii","Endemic",1
+"149","Mecosoma floridum","Not Endemic",2
+"150","Mecosoma mensor","Not Endemic",13
+"151","Montrouzieriellus borneensis","Endemic",1
+"152","Montrouzieriellus falleni","Not Endemic",14
+"153","Montrouzieriellus inermis","Endemic",1
+"154","Montrouzieriellus laetus","Endemic",6
+"155","Montrouzieriellus lefebvrei","Endemic",1
+"156","Montrouzieriellus minor","Endemic",1
+"157","Montrouzieriellus purparascens","Endemic",1
+"158","Montrouzieriellus turneri","Not Endemic",3
+"159","Oechalia acuta","Endemic",2
+"160","Oechalia bryani","Endemic",3
+"161","Oechalia ferruginea","Endemic",1
+"162","Oechalia grisea","Endemic",2
+"163","Oechalia hirtipes","Endemic",1
+"164","Oechalia kaonohi","Endemic",6
+"165","Oechalia pacifica","Endemic",5
+"166","Oechalia patruelis","Endemic",8
+"167","Oechalia schellenbergii","Not Endemic",36
+"168","Oechalia similis","Endemic",1
+"169","Oechalia sinuata","Endemic",1
+"170","Oechalia suehiroae","Endemic",1
+"171","Oechalia swezeyi","Endemic",2
+"172","Oechalia virescens","Endemic",8
+"173","Oechalia virgula","Endemic",2
+"174","Oplomus annotatus","Endemic",1
+"175","Oplomus catena","Not Endemic",31
+"176","Oplomus cruentus","Not Endemic",32
+"177","Oplomus dichrous","Not Endemic",44
+"178","Oplomus ebulinus","Not Endemic",2
+"179","Oplomus festivus","Not Endemic",33
+"180","Oplomus mundus","Not Endemic",11
+"181","Oplomus mutabilis","Not Endemic",14
+"182","Oplomus pulcher","Not Endemic",33
+"183","Oplomus pulchriventris","Endemic",6
+"184","Oplomus punctatus","Not Endemic",12
+"185","Oplomus salamandra","Not Endemic",24
+"186","Ornithosoma rivierei","Endemic",1
+"187","Parajalla sanguineosignata","Endemic",2
+"188","Parealda bouvieri","Endemic",1
+"189","Perillus bioculatus","Not Endemic",121
+"190","Perillus circumcinctus","Endemic",33
+"191","Perillus confluens","Not Endemic",29
+"192","Perillus exaptus","Not Endemic",61
+"193","Perillus lunatus","Endemic",1
+"194","Perillus splendidus","Not Endemic",13
+"195","Perillus strigipes","Endemic",17
+"196","Picromerus bidens","Not Endemic",68
+"197","Picromerus brachypterus","Endemic",1
+"198","Picromerus conformis","Endemic",5
+"199","Picromerus elevatus","Endemic",6
+"200","Picromerus fasciaticeps","Endemic",2
+"201","Picromerus griseus","Not Endemic",10
+"202","Picromerus lewisi","Not Endemic",22
+"203","Picromerus nigridens","Not Endemic",13
+"204","Picromerus orientalis","Endemic",1
+"205","Picromerus pseudobidens","Endemic",1
+"206","Picromerus viridipunctatus","Endemic",8
+"207","Pinthaeus sanguinipes","Not Endemic",36
+"208","Planopsis silvaticus","Not Endemic",5
+"209","Platynopiellus delevali","Endemic",1
+"210","Platynopiellus dispar","Endemic",1
+"211","Platynopiellus fallax","Endemic",1
+"212","Platynopiellus horvathi","Not Endemic",3
+"213","Platynopiellus reichi","Not Endemic",2
+"214","Platynopiellus scutellatus","Endemic",1
+"215","Platynopiellus septendecimaculatus","Not Endemic",12
+"216","Platynopiellus thomsonii","Not Endemic",2
+"217","Platynopus calliger","Endemic",1
+"218","Platynopus carbonarius","Endemic",1
+"219","Platynopus dalpadoides","Not Endemic",2
+"220","Platynopus indicus","Endemic",1
+"221","Platynopus melanoleucus","Not Endemic",4
+"222","Podisus aenescens","Not Endemic",22
+"223","Podisus affinis","Not Endemic",14
+"224","Podisus australis","Not Endemic",2
+"225","Podisus boriquensis","Endemic",1
+"226","Podisus brevispinus","Not Endemic",228
+"227","Podisus congrex","Not Endemic",33
+"228","Podisus cornutus","Endemic",1
+"229","Podisus crassimargo","Endemic",1
+"230","Podisus curvispinus","Endemic",1
+"231","Podisus distinctus","Endemic",9
+"232","Podisus falcatus","Not Endemic",3
+"233","Podisus fuscescens","Not Endemic",87
+"234","Podisus graziae","Not Endemic",6
+"235","Podisus gundlachii","Endemic",1
+"236","Podisus insignis","Endemic",1
+"237","Podisus mactans","Endemic",1
+"238","Podisus maculiventris","Not Endemic",423
+"239","Podisus mexicanus","Endemic",8
+"240","Podisus mucronatus","Not Endemic",31
+"241","Podisus neglectus","Endemic",2
+"242","Podisus nigrispinus","Not Endemic",36
+"243","Podisus nigriventris","Not Endemic",10
+"244","Podisus pallipes","Endemic",1
+"245","Podisus placidus","Not Endemic",202
+"246","Podisus rostralis","Not Endemic",3
+"247","Podisus sagitta","Not Endemic",63
+"248","Podisus sculptus","Not Endemic",2
+"249","Podisus semialbus","Endemic",1
+"250","Podisus serieventris","Not Endemic",126
+"251","Podisus sordidus","Endemic",1
+"252","Podisus subferrugineus","Not Endemic",4
+"253","Podisus thomasi","Not Endemic",12
+"254","Podisus tinctus","Endemic",1
+"255","Podisus trucidatus","Endemic",1
+"256","Podisus ventralis","Not Endemic",6
+"257","Ponapea arachnoides","Endemic",1
+"258","Pseudanasida fallax","Endemic",1
+"259","Pseudanasida ikrami","Endemic",1
+"260","Rhacognathus americanus","Endemic",5
+"261","Rhacognathus callosus","Endemic",1
+"262","Rhacognathus corniger","Endemic",1
+"263","Rhacognathus punctatus","Not Endemic",23
+"264","Spockia tagala","Endemic",2
+"265","Stilbotes goulae","Endemic",1
+"266","Stilbotes semperi","Endemic",4
+"267","Stiretrus anchorago","Not Endemic",146
+"268","Stiretrus bifrenatus","Not Endemic",2
+"269","Stiretrus cinctellus","Not Endemic",4
+"270","Stiretrus decastigmus","Not Endemic",43
+"271","Stiretrus decemguttatus","Not Endemic",56
+"272","Stiretrus erythrocephalus","Not Endemic",38
+"273","Stiretrus loratus","Not Endemic",9
+"274","Stiretrus quinquepunctatus","Endemic",1
+"275","Supputius cincticeps","Not Endemic",60
+"276","Supputius pulchicornis","Endemic",2
+"277","Supputius typicus","Not Endemic",12
+"278","Troilus luridus","Not Endemic",32
+"279","Troilus testaceus","Endemic",2
+"280","Tylospilus acutissimus","Not Endemic",171
+"281","Tylospilus armatusimilis","Endemic",2
+"282","Tylospilus chilensis","Not Endemic",2
+"283","Tylospilus cloelia","Not Endemic",19
+"284","Tylospilus distans","Not Endemic",8
+"285","Tylospilus gaumeri","Endemic",1
+"286","Tylospilus megaspilus","Endemic",1
+"287","Tylospilus nigrobinotatus","Not Endemic",16
+"288","Tylospilus peruvianus","Not Endemic",6
+"289","Tynacantha cuprea","Endemic",1
+"290","Tynacantha marginata","Not Endemic",118
+"291","Tynacantha splendens","Not Endemic",2
+"292","Tynacantha umeridenigrata","Endemic",1
+"293","Tyrannocoris jole","Not Endemic",10
+"294","Tyrannocoris nigriceps","Not Endemic",14
+"295","Tyrannocoris rex","Not Endemic",13
+"296","Tyrannocoris rideri","Endemic",1
+"297","Zicrona americana","Not Endemic",17
+"298","Zicrona caerulea","Not Endemic",88
+"299","Zicrona hisarensis","Endemic",1
