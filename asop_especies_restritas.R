@@ -31,7 +31,6 @@ endemic_species_per_country <- asop %>%
 
 
 write.csv(restricted_cntr, "Stats/species_end_cntr.csv")
-
 write.csv(endemic_cntr, "Stats/percent_endemic_cntr.csv")
 write.csv(endemic_species_per_country, "Stats/asop_end_cntr.csv")
 
