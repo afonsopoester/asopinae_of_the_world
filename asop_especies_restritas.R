@@ -54,9 +54,9 @@ endemic_species_per_cont <- asop %>%
   group_by(Species) %>%
   filter(n_distinct(continent) == 1) %>%  # Keep only endemic species (those found in one country)
   ungroup() %>%
-  group_by(country, Species) %>%
+  group_by(continent, Species) %>%
   summarize(endemic_species_count = n_distinct(Species)) %>%
-  group_by(country) %>%
+  group_by(continent) %>%
   summarize(endemic_species_count = n()) 
 
 
