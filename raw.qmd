@@ -20,6 +20,9 @@ library(reactable)
 #| echo: false
 #| output: false
 
+asop_raw <- read_csv("Suppl material 2/Suppl material 2.csv")
+
+
 #READ DISTRBUTION DATA
 asop <- read.csv("asopinae_v_1_0.csv", sep = ",")
 asop <- asop %>%
@@ -31,20 +34,80 @@ asop$Y_Latitude <- as.numeric(asop$Y_Latitude)
 
 row.names(asop) <- NULL
 
-
 shared_asop <- SharedData$new(asop, group = "Asop")
 
-share_species <- asop %>%
-  select(Species) %>%
-  unique() %>%
-  SharedData$new(group = "Asop")
+shared_asop_raw <- SharedData$new(asop_raw, group = "Asop")
+
+#share_species <- asop %>%
+ # select(Species) %>%
+#  unique() %>%
+#  SharedData$new(group = "Asop")
 ```
 
-This is the current database of "Asopinae of the World". Here, you can look at the table data. It is the same table data available alongside the Distribution Map. Bellow it, you can also look at all the species in the database.
+This is the current database of "Asopinae of the World". Here, you can look at the raw data that originated this work, and the processed data used for the Distribution Map and analysis. 
 
 We emphasize that ***some records are georeferenced only according to the country reported for the species***, as well as records that are the only ones known for a given species in a country.
 
+## Raw data - 5831 records
+
 ```{r}
+#| echo: false
+
+bscols(
+  value_box(
+    title = "Records",
+    value = summarywidget(shared_asop_raw),
+    showcase = bsicons::bs_icon("search"),
+    theme = value_box_theme(bg = "#2f4538", fg = "#F3EEEA"),
+    width = 0.1
+  )
+  )
+  
+
+```
+
+```{r}
+#| echo: false
+
+
+library(fontawesome)
+
+htmltools::browsable(
+    tagList(
+      tags$button(
+        tagList(fontawesome::fa("download"), "Download as CSV"),
+        onclick = "Reactable.downloadDataCSV('asop_table_raw','Suppl material 2/Suppl material 2.csv')"
+      ),
+    reactable(shared_asop_raw,
+              defaultColDef = colDef(
+                  align = "left",
+                  headerStyle = list(background = "#f7f7f8", fontSize = "11px"),  
+                  style = list(fontSize = "11px") 
+                ),
+              columns = list(
+            Genus = colDef(width = 60),
+            Subgenus = colDef(width = 60),
+            Species = colDef(width = 60),
+            Author = colDef(width = 60),
+            Local_Label = colDef(width = 100),
+            X_Longitude = colDef(width = 60),
+            Y_Latitude = colDef(width = 60),
+            Refs = colDef(width = 80)
+          ),
+              elementId = 'asop_table',
+              highlight = TRUE,
+              pagination = FALSE,
+              height = 1000,
+              width = "100%",
+              style = list(fontSize = "10px"))
+  )
+)
+```
+
+
+## Processed data - 5030 records
+
+``` {r}
 #| echo: false
 
 bscols(
@@ -54,25 +117,13 @@ bscols(
     showcase = bsicons::bs_icon("search"),
     theme = value_box_theme(bg = "#2f4538", fg = "#F3EEEA"),
     width = 0.1
-  ),
-  
-    value_box(
-    title = "Species",
-    value = summarywidget(share_species),
-    showcase = bsicons::bs_icon("search"),
-    theme = value_box_theme(bg = "#2f4538", fg = "#F3EEEA"),
-    width = 0.1
   )
-  
 )
+
 ```
 
-```{r}
-#| echo: false
 
-
-library(fontawesome)
-
+``` {r}
 htmltools::browsable(
     tagList(
       tags$button(
@@ -109,44 +160,3 @@ htmltools::browsable(
 
 ```
 
-## Species in the database
-
-```{r gráfico n de registros}
-#| echo: false
-#| warning: false
-
-regs <- read.csv("Stats/continents_countries.csv") %>%
-  select(Species, Count, Conts, Number_Cont, Cntrs, Number_Cntr)
-
-shared_plot <- SharedData$new(regs)
-
-
-filter_select("Species", "Species", shared_plot, ~Species)
- 
-
-
-
-
-reactable(
-  shared_plot,
-  defaultColDef = colDef(
-      align = "center",
-      headerStyle = list(background = "#f7f7f8")
-    ),
-  columns = list(
-      Species = colDef(name = "Species"),
-      Count = colDef(name = "Number of Records"),
-      Conts = colDef(name = "Continents Occuring"),
-      Number_Cont = colDef(name = "Number of Continents Occuring"),
-      Cntrs = colDef(name = "Countries Occuring"),
-      Number_Cntr = colDef(name = "Number of Countries Occuring")
-    ),
-  highlight = TRUE,
-  pagination = FALSE,
-  height = 1000
-)
-
-
-
-
-```
