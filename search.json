@@ -4,7 +4,21 @@
     "href": "raw.html",
     "title": "Raw Data",
     "section": "",
-    "text": "This is the current database of “Asopinae of the World”. Here, you can look at the table data. It is the same table data available alongside the Distribution Map. Bellow it, you can also look at all the species in the database.\nWe emphasize that some records are georeferenced only according to the country reported for the species, as well as records that are the only ones known for a given species in a country.\n\n\n\n\n\n\n\n\n\n\nRecords\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDownload as CSV"
+    "text": "This is the current database of “Asopinae of the World”. Here, you can look at the raw data that originated this work, and the processed data used for the Distribution Map and analysis.\nWe emphasize that some records are georeferenced only according to the country reported for the species, as well as records that are the only ones known for a given species in a country."
+  },
+  {
+    "objectID": "raw.html#raw-data---5831-records",
+    "href": "raw.html#raw-data---5831-records",
+    "title": "Raw Data",
+    "section": "Raw data - 5831 records",
+    "text": "Raw data - 5831 records\n\n\n\n\n\n\n\n\n\n\nRecords\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDownload as CSV"
+  },
+  {
+    "objectID": "raw.html#processed-data---5030-records",
+    "href": "raw.html#processed-data---5030-records",
+    "title": "Raw Data",
+    "section": "Processed data - 5030 records",
+    "text": "Processed data - 5030 records\n\n\n\n\n\n\n\n\n\n\nRecords\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nhtmltools::browsable(\n    tagList(\n      tags$button(\n        tagList(fontawesome::fa(\"download\"), \"Download as CSV\"),\n        onclick = \"Reactable.downloadDataCSV('asop_table','asopinae_v_1_0.csv')\"\n      ),\n    reactable(shared_asop,\n              defaultColDef = colDef(\n                  align = \"left\",\n                  headerStyle = list(background = \"#f7f7f8\", fontSize = \"11px\"),  \n                  style = list(fontSize = \"11px\") \n                ),\n              columns = list(\n            Genus = colDef(width = 50),\n            Species = colDef(width = 80),\n            Local_Label = colDef(width = 100),\n            X_Longitude = colDef(width = 60),\n            Y_Latitude = colDef(width = 60),\n            Refs = colDef(width = 80),\n            Country = colDef(width = 80),\n            Continent = colDef(width = 80),\n            Realm = colDef(width = 100),\n            Country_Level_Record = colDef(width = 150)\n          ),\n              elementId = 'asop_table',\n              highlight = TRUE,\n              pagination = FALSE,\n              height = 1000,\n              width = \"100%\",\n              style = list(fontSize = \"10px\"))\n  )\n)\n\n\n\nDownload as CSV"
   },
   {
     "objectID": "distr_data.html",
