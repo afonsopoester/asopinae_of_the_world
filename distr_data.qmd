@@ -234,7 +234,7 @@ bscols(
 #| echo: false
 #| warning: false
 
-pal <- colorFactor("Spectral", domain = unique(asop_raw$Species_Name))
+pal_raw <- colorFactor("Spectral", domain = unique(asop_raw$Species_Name))
 
 leaflet(data = shared_asop_raw) %>%
   addProviderTiles("Esri.WorldImagery", group = "Aerial") %>%
@@ -248,12 +248,14 @@ leaflet(data = shared_asop_raw) %>%
                    lat = ~ Y_Latitude,
                     popup = ~paste0(
                       "<b>Genus:</b> ", htmltools::htmlEscape(Genus), "<br>",
+                      "<b>Subgenus:</b> ", htmltools::htmlEscape(Subgenus), "<br>",
                       "<b>Species:</b> ", htmltools::htmlEscape(Species), "<br>",
+                      "<b>Species Name:</b> ", htmltools::htmlEscape(Species_Name), "<br>",
                       "<b>Local Label:</b> ", htmltools::htmlEscape(Local_Label), "<br>",
                       "<b>Longitude:</b> ", htmltools::htmlEscape(X_Longitude), "<br>",
                       "<b>Latitude:</b> ", htmltools::htmlEscape(Y_Latitude), "<br>",
                       "<b>Refs:</b> ", htmltools::htmlEscape(Refs), "<br>",
-                      "<b>Observations:<b> ", htmltools::htmlEscape(Observations), "<br>",
+                      "<b>Observations:<b> ", htmltools::htmlEscape(Observations), "<br>"
                     ),
                    color = ~pal(Species_Name))
 ```
