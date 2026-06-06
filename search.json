@@ -60,14 +60,14 @@
     "href": "distr_data.html",
     "title": "Distribution map",
     "section": "",
-    "text": "This is the current database of “Asopinae of the World” accessible through an interactive map! Right below it, you can find a table with the selected records and a download button. It will only download the records which are selected, so if you want to download the whole database, do not aplly any filters. If hold “ctrl” you can select more than one item in the filters.\nWe emphasize that the we excluded duplicate records and some records are georeferenced only according to the country reported for the species, as well as records that are the only ones known for a given species in a country.\nRecords\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecies\nGenus\n\n\n\n\n\n\n\n\nSpecies\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nContinent\n\n\n\n\n\n\n\n\nCountry\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBiogeographical Realm\nDownload as CSV"
+    "text": "This is the current database of “Asopinae of the World” accessible through an interactive map! Right below it, you can find a table with the selected records and a download button. It will only download the records which are selected, so if you want to download the whole database, do not aplly any filters. If hold “ctrl” you can select more than one item in the filters.\nWe emphasize that the we excluded duplicate records and some records are georeferenced only according to the country reported for the species, as well as records that are the only ones known for a given species in a country.\nRecords\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecies\nGenus\n\n\n\n\n\n\n\n\nSpecies\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nContinent\n\n\n\n\n\n\n\n\nCountry\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBiogeographical Realm"
   },
   {
     "objectID": "distr_data.html#raw-records",
     "href": "distr_data.html#raw-records",
     "title": "Distribution map",
     "section": "Raw records",
-    "text": "Raw records\n\n\n\n\n\n\n\n\n\n\nRecords\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecies\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGenus\n\n\n\n\n\n\n\n\nSpecies\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDownload as CSV"
+    "text": "Raw records\n\n\n\n\n\n\n\n\n\n\nRecords\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpecies\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGenus\n\n\n\n\n\n\n\n\nSpecies"
   },
   {
     "objectID": "raw.html",
