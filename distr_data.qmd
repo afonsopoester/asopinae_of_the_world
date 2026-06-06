@@ -252,7 +252,8 @@ leaflet(data = shared_asop_raw) %>%
                       "<b>Local Label:</b> ", htmltools::htmlEscape(Local_Label), "<br>",
                       "<b>Longitude:</b> ", htmltools::htmlEscape(X_Longitude), "<br>",
                       "<b>Latitude:</b> ", htmltools::htmlEscape(Y_Latitude), "<br>",
-                      "<b>Refs:</b> ", htmltools::htmlEscape(Refs), "<br>"
+                      "<b>Refs:</b> ", htmltools::htmlEscape(Refs), "<br>",
+                      "<b>Observations:<b> ", htmltools::htmlEscape(Observations), "<br>",
                     ),
                    color = ~pal(Species_Name))
 ```
@@ -279,10 +280,13 @@ htmltools::browsable(
               columns = list(
             Genus = colDef(width = 50),
             Species = colDef(width = 80),
+            Species_Name = colDef(width = 80),
             Local_Label = colDef(width = 100),
             X_Longitude = colDef(width = 60),
             Y_Latitude = colDef(width = 60),
-            Refs = colDef(width = 80)
+            Refs = colDef(width = 80),
+            Observations = colDef(width = 50),
+            Removed = colDef(width = 50)
           ),
               elementId = 'asop_table',
               highlight = TRUE,

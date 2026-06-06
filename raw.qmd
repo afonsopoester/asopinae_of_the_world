@@ -85,14 +85,15 @@ htmltools::browsable(
                   style = list(fontSize = "11px") 
                 ),
               columns = list(
-            Genus = colDef(width = 60),
-            Subgenus = colDef(width = 60),
-            Species = colDef(width = 60),
-            Author = colDef(width = 60),
+            Genus = colDef(width = 50),
+            Species = colDef(width = 80),
+            Species_Name = colDef(width = 80),
             Local_Label = colDef(width = 100),
             X_Longitude = colDef(width = 60),
             Y_Latitude = colDef(width = 60),
-            Refs = colDef(width = 80)
+            Refs = colDef(width = 80),
+            Observations = colDef(width = 50),
+            Removed = colDef(width = 50)
           ),
               elementId = 'asop_table_raw',
               highlight = TRUE,
