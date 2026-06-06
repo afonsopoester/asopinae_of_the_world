@@ -24,6 +24,9 @@ library(reactable)
 #| echo: false
 #| output: false
 
+asop_raw <- read_csv("Suppl material 2/Suppl material 2.csv") %>%
+  mutate(Species_Name = paste(Genus, Species))
+
 #READ DISTRBUTION DATA
 asop <- read.csv("asopinae_v_1_0.csv", sep = ",")
 asop <- asop %>%
@@ -43,6 +46,14 @@ share_species <- asop %>%
   select(Species) %>%
   unique() %>%
   SharedData$new(group = "Asop")
+
+
+shared_asop_raw <- SharedData$new(asop_raw, group = "Asop_Raw")
+share_species_raw <- asop_raw %>%
+  select(Species_Name) %>%
+  unique() %>%
+  SharedData$new(group = "Asop_Raw")
+  
 ```
 
 This is the current database of "Asopinae of the World" accessible through an interactive map! Right below it, you can find a table with the selected records and a download button. It will only download the records which are selected, so if you want to download the whole database, do not aplly any filters. If hold "ctrl" you can select more than one item in the filters.
@@ -171,6 +182,107 @@ htmltools::browsable(
             Continent = colDef(width = 80),
             Realm = colDef(width = 100),
             Country_Level_Record = colDef(width = 150)
+          ),
+              elementId = 'asop_table',
+              highlight = TRUE,
+              pagination = FALSE,
+              height = 1000,
+              width = "100%",
+              style = list(fontSize = "10px"))
+  )
+)
+  
+
+```
+
+
+## Raw records 
+
+
+``` {r}
+#| echo: false
+bscols(
+  value_box(
+    title = "Records",
+    value = summarywidget(shared_asop_raw),
+    showcase = bsicons::bs_icon("search"),
+    theme = value_box_theme(bg = "#2f4538", fg = "#F3EEEA"),
+    width = 0.1
+  ),
+  
+    value_box(
+    title = "Species",
+    value = summarywidget(share_species_raw),
+    showcase = bsicons::bs_icon("search"),
+    theme = value_box_theme(bg = "#2f4538", fg = "#F3EEEA"),
+    width = 0.1
+  )
+  
+)
+```
+
+``` {r}
+#| echo: false
+#| warning: false
+bscols(
+  filter_select("Genus", "Genus", shared_asop_raw, ~Genus),
+  filter_select("Species", "Species", shared_asop_raw, ~Species_Name)
+) 
+```
+
+```{r}
+#| echo: false
+#| warning: false
+
+pal <- colorFactor("Spectral", domain = unique(asop_raw$Species_Name))
+
+leaflet(data = shared_asop_raw) %>%
+  addProviderTiles("Esri.WorldImagery", group = "Aerial") %>%
+  addProviderTiles(providers$CartoDB.Voyager, group = "Default") %>%
+  addLayersControl(
+    baseGroups = c("Default", "Aerial"),
+    options = layersControlOptions(collapsed = T)
+    ) %>%
+  addCircleMarkers(radius = 2,
+                   lng = ~ X_Longitude,
+                   lat = ~ Y_Latitude,
+                    popup = ~paste0(
+                      "<b>Genus:</b> ", htmltools::htmlEscape(Genus), "<br>",
+                      "<b>Species:</b> ", htmltools::htmlEscape(Species), "<br>",
+                      "<b>Local Label:</b> ", htmltools::htmlEscape(Local_Label), "<br>",
+                      "<b>Longitude:</b> ", htmltools::htmlEscape(X_Longitude), "<br>",
+                      "<b>Latitude:</b> ", htmltools::htmlEscape(Y_Latitude), "<br>",
+                      "<b>Refs:</b> ", htmltools::htmlEscape(Refs), "<br>"
+                    ),
+                   color = ~pal(Species_Name))
+```
+
+
+```{r}
+#| echo: false
+
+
+library(fontawesome)
+
+htmltools::browsable(
+    tagList(
+      tags$button(
+        tagList(fontawesome::fa("download"), "Download as CSV"),
+        onclick = "Reactable.downloadDataCSV('asop_table_raw','Suppl material 2/Suppl material 2.csv')"
+      ),
+    reactable(shared_asop_raw,
+              defaultColDef = colDef(
+                  align = "left",
+                  headerStyle = list(background = "#f7f7f8", fontSize = "11px"),  
+                  style = list(fontSize = "11px") 
+                ),
+              columns = list(
+            Genus = colDef(width = 50),
+            Species = colDef(width = 80),
+            Local_Label = colDef(width = 100),
+            X_Longitude = colDef(width = 60),
+            Y_Latitude = colDef(width = 60),
+            Refs = colDef(width = 80)
           ),
               elementId = 'asop_table',
               highlight = TRUE,

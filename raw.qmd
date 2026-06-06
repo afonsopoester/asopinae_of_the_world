@@ -44,7 +44,7 @@ shared_asop_raw <- SharedData$new(asop_raw, group = "Asop")
 #  SharedData$new(group = "Asop")
 ```
 
-This is the current database of "Asopinae of the World". Here, you can look at the raw data that originated this work, and the processed data used for the Distribution Map and analysis. 
+This is the current database of "Asopinae of the World". Here, you can look at the raw data that originated this work, and the processed data used for the Distribution Map and analysis. Three records of "Perillus bioculatus" from India that are in the raw data were removed for further analysis, but they can be checked in the file.
 
 We emphasize that ***some records are georeferenced only according to the country reported for the species***, as well as records that are the only ones known for a given species in a country.
 
@@ -94,7 +94,7 @@ htmltools::browsable(
             Y_Latitude = colDef(width = 60),
             Refs = colDef(width = 80)
           ),
-              elementId = 'asop_table',
+              elementId = 'asop_table_raw',
               highlight = TRUE,
               pagination = FALSE,
               height = 1000,
@@ -104,12 +104,11 @@ htmltools::browsable(
 )
 ```
 
-
 ## Processed data - 5030 records
 
-``` {r}
-#| echo: false
+```{r}
 
+#| echo: false
 bscols(
   value_box(
     title = "Records",
@@ -122,8 +121,9 @@ bscols(
 
 ```
 
+```{r}
+#| echo: false
 
-``` {r}
 htmltools::browsable(
     tagList(
       tags$button(
@@ -159,4 +159,3 @@ htmltools::browsable(
   
 
 ```
-
