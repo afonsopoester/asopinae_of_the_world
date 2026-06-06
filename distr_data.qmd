@@ -145,55 +145,6 @@ leaflet(data = shared_asop) %>%
                    color = ~pal(Species))
 ```
 
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-
-```{r}
-#| echo: false
-
-
-library(fontawesome)
-
-htmltools::browsable(
-    tagList(
-      tags$button(
-        tagList(fontawesome::fa("download"), "Download as CSV"),
-        onclick = "Reactable.downloadDataCSV('asop_table','asopinae_v_1_0.csv')"
-      ),
-    reactable(shared_asop,
-              defaultColDef = colDef(
-                  align = "left",
-                  headerStyle = list(background = "#f7f7f8", fontSize = "11px"),  
-                  style = list(fontSize = "11px") 
-                ),
-              columns = list(
-            Genus = colDef(width = 50),
-            Species = colDef(width = 80),
-            Local_Label = colDef(width = 100),
-            X_Longitude = colDef(width = 60),
-            Y_Latitude = colDef(width = 60),
-            Refs = colDef(width = 80),
-            Country = colDef(width = 80),
-            Continent = colDef(width = 80),
-            Realm = colDef(width = 100),
-            Country_Level_Record = colDef(width = 150)
-          ),
-              elementId = 'asop_table',
-              highlight = TRUE,
-              pagination = FALSE,
-              height = 1000,
-              width = "100%",
-              style = list(fontSize = "10px"))
-  )
-)
-  
-
-```
 
 
 ## Raw records 
@@ -261,43 +212,3 @@ leaflet(data = shared_asop_raw) %>%
 ```
 
 
-```{r}
-#| echo: false
-
-
-library(fontawesome)
-
-htmltools::browsable(
-    tagList(
-      tags$button(
-        tagList(fontawesome::fa("download"), "Download as CSV"),
-        onclick = "Reactable.downloadDataCSV('asop_table_raw','Suppl material 2/Suppl material 2.csv')"
-      ),
-    reactable(shared_asop_raw,
-              defaultColDef = colDef(
-                  align = "left",
-                  headerStyle = list(background = "#f7f7f8", fontSize = "11px"),  
-                  style = list(fontSize = "11px") 
-                ),
-              columns = list(
-            Genus = colDef(width = 50),
-            Species = colDef(width = 80),
-            Species_Name = colDef(width = 80),
-            Local_Label = colDef(width = 100),
-            X_Longitude = colDef(width = 60),
-            Y_Latitude = colDef(width = 60),
-            Refs = colDef(width = 80),
-            Observations = colDef(width = 50),
-            Removed = colDef(width = 50)
-          ),
-              elementId = 'asop_table',
-              highlight = TRUE,
-              pagination = FALSE,
-              height = 1000,
-              width = "100%",
-              style = list(fontSize = "10px"))
-  )
-)
-  
-
-```
