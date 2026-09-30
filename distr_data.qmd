@@ -117,11 +117,11 @@ pal <- colorFactor("Spectral", domain = unique(asop$Species))
 
 leaflet(data = shared_asop) %>%
   addProviderTiles("Esri.WorldImagery", group = "Aerial") %>%
-  addProviderTiles(providers$CartoDB.Voyager, group = "Default") %>%
+  addProviderTiles(providers$Esri.WorldStreetMap, group = "Default") %>%
   addLayersControl(
     baseGroups = c("Default", "Aerial"),
-    options = layersControlOptions(collapsed = T)
-    ) %>%
+    options = layersControlOptions(collapsed = TRUE)
+  ) %>%
   addCircleMarkers(radius = 2,
                    lng = ~ X_Longitude,
                    lat = ~ Y_Latitude,
@@ -183,12 +183,12 @@ bscols(
 pal_raw <- colorFactor("Spectral", domain = unique(asop_raw$Species_Name))
 
 leaflet(data = shared_asop_raw) %>%
-  addProviderTiles("Esri.WorldImagery", group = "Aerial") %>%
-  addProviderTiles(providers$CartoDB.Voyager, group = "Default") %>%
+ addProviderTiles("Esri.WorldImagery", group = "Aerial") %>%
+  addProviderTiles(providers$Esri.WorldStreetMap, group = "Default") %>%
   addLayersControl(
     baseGroups = c("Default", "Aerial"),
-    options = layersControlOptions(collapsed = T)
-    ) %>%
+    options = layersControlOptions(collapsed = TRUE)
+  )%>%
   addCircleMarkers(radius = 2,
                    lng = ~ X_Longitude,
                    lat = ~ Y_Latitude,
