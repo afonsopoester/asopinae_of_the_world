@@ -1,7 +1,12 @@
 project:
   type: website
 
-
+execute:
+  echo: false
+  warning: false
+  message: false
+  
+  
 title: "Asopinae of the World"
 
 website:
