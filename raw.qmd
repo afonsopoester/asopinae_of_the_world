@@ -108,8 +108,9 @@ htmltools::browsable(
 ## Processed data - 5030 records
 
 ```{r}
-
 #| echo: false
+
+
 bscols(
   value_box(
     title = "Records",
