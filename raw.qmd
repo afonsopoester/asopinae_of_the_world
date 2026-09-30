@@ -4,7 +4,8 @@ format: html
 editor: visual
 ---
 
-```{r load data, message = FALSE, warning = FALSE, include = FALSE}
+```{r}
+#| include: false
 library(tidyverse)
 library(leaflet)
 library(htmlwidgets)
@@ -109,7 +110,6 @@ htmltools::browsable(
 
 ```{r}
 #| echo: false
-
 
 bscols(
   value_box(
