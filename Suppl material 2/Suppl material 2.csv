@@ -1,4 +1,4 @@
-﻿Genus,Subgenus,Species,Author ,Local_Label,Y_Latitude,X_Longitude,Refs,Observations
+﻿Genus,Subgenus,Species,Author ,Local_Label,Y_Latitude,X_Longitude,Refs,Observations/Removed
 Afrius,Afrius,kolleri,"Schouteden, 1911",DEMOCRATIC REPUBLIC OF THE CONGO: Elizabethville (Lubumbashi) ,-11.68,27.49,Roell et al. 2019,
 Afrius,Afrius,kolleri,"Schouteden, 1911",DEMOCRATIC REPUBLIC OF THE CONGO: Galikoko ,-4.96,21.25,Roell et al. 2019,
 Afrius,Afrius,kolleri,"Schouteden, 1911",DEMOCRATIC REPUBLIC OF THE CONGO: Ituri ,1.87,29.26,Roell et al. 2019,
@@ -2929,9 +2929,9 @@ Perillus,,exaptus,"Say, 1825","USA: Michigan, Iosco",44.3,-83.51,Swanson 2012,
 Perillus,,exaptus,"Say, 1825","USA: Michigan, Lake",43.99,-85.8,Swanson 2012,
 Perillus,,exaptus,"Say, 1825","USA: Michigan, Livingston",42.6,-83.91,Swanson 2012,
 Perillus,,exaptus,"Say, 1825","USA: Michigan, Mackinac",45.57,-84.76,Swanson 2012,
-Perillus,,bioculatus,"Fabricius, 1775","INDIA: Punjab, Gusdarpur",31.92,75.27,Kaur & Suman 2012,
-Perillus,,bioculatus,"Fabricius, 1775","INDIA: Punjab, Patiala",30.35,76.4,Kaur & Suman 2012,
-Perillus,,bioculatus,"Fabricius, 1775","INDIA: Punjab, Pathankot",32.33,75.64,Kaur & Semahagn 2010,
+Perillus,,bioculatus,"Fabricius, 1775","INDIA: Punjab, Gusdarpur",31.92,75.27,Kaur & Suman 2012,Removed
+Perillus,,bioculatus,"Fabricius, 1775","INDIA: Punjab, Patiala",30.35,76.4,Kaur & Suman 2012,Removed
+Perillus,,bioculatus,"Fabricius, 1775","INDIA: Punjab, Pathankot",32.33,75.64,Kaur & Semahagn 2010,Removed
 Perillus,,exaptus,"Say, 1825","USA: Michigan, Marquette",46.66,-87.57,Swanson 2012,
 Perillus,,exaptus,"Say, 1825","USA: Michigan, Montmorency",45.02,-84.12,Swanson 2012,
 Perillus,,exaptus,"Say, 1825","USA: Michigan, Newaygo",43.55,-85.8,Swanson 2012,
