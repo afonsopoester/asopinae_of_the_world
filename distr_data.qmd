@@ -201,7 +201,7 @@ leaflet(data = shared_asop_raw) %>%
                       "<b>Longitude:</b> ", htmltools::htmlEscape(X_Longitude), "<br>",
                       "<b>Latitude:</b> ", htmltools::htmlEscape(Y_Latitude), "<br>",
                       "<b>Refs:</b> ", htmltools::htmlEscape(Refs), "<br>",
-                      "<b>Observations:<b> ", htmltools::htmlEscape(Observations), "<br>"
+                      "<b>Observations/Removed:<b> ", htmltools::htmlEscape(Observations/Removed), "<br>"
                     ),
                    color = ~pal(Species_Name))
 ```
