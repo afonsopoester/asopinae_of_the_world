@@ -95,7 +95,7 @@ htmltools::browsable(
             X_Longitude = colDef(width = 60),
             Y_Latitude = colDef(width = 60),
             Refs = colDef(width = 80),
-            Observations = colDef(width = 50),
+            `Observations/Removed` = colDef(width = 50),
             Removed = colDef(width = 50)
           ),
               elementId = 'asop_table_raw',
